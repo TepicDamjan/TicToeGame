@@ -1,0 +1,104 @@
+body{
+    background-color: #1A2A33;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 40px;
+}
+.pickPlayerWrapper{
+    background-color: #1F3641;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 460px;
+    height: 205px;
+}
+
+.pickPlayerH2{
+    color: #A8BFC9;
+    font-size: 16px;
+    text-align: center;
+}
+
+.choosePlayer{
+    width: 412px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #1A2A33;
+}
+
+.xButton{
+    width: 198px;
+    height: 54px;
+    padding: 0;
+    background-color: #A8BFC9;
+    font-size: 32px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.oButton{
+    width: 198px;
+    height: 54px;
+    padding: 0;
+    background-color:#1A2A33;
+    font-size: 32px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.p-main{
+    color: #A8BFC9;
+    font-size: 16px;
+    text-align: center;
+}
+
+.cpuButton{
+    width: 460px;
+    height: 67px;
+    background-color: #F2B137;
+    border-radius: 15px;
+    color: #1A2A33;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.buttonWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.playerButton{
+    background-color: #31C3BD;
+    width: 460px;
+    height: 67px;
+    border-radius: 15px;
+    color: #1A2A33;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.cpuButton:hover{
+    background-color: #FFC860;
+}
+
+.playerButton:hover{
+    background-color: #65E9E4;
+}
