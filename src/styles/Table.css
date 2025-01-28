@@ -36,6 +36,7 @@ body{
 
 .tableWrapper{
     width: 460px;
+    height: 461px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -51,6 +52,21 @@ body{
     border-radius: 15px;
 }
 
+.hover-x:hover{
+
+    background-image: url('../assets/hover-x.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+}
+
+.hover-o:hover{
+    background-image: url('../assets/hover-o.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .resultWrapper{
     width: 460px;
     display: flex;
@@ -60,23 +76,132 @@ body{
     gap: 19px;
 }
 
-.x-resut{
+.x-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
     width: 140px;
     height: 72px;
     background-color: #31C3BD;
     border-radius: 15px;
+    margin: 0;
 }
 
-.ties-resut{
+.ties-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
     width: 140px;
     height: 72px;
     background-color: #A8BFC9;
     border-radius: 15px;
+    margin: 0;
 }
 
-.o-resut{
+.o-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
     width: 140px;
     height: 72px;
     background-color: #F2B137;
     border-radius: 15px;
+    margin: 0;
 }
+
+.p-result{
+    font-size: 14px;
+    color: #1A2A33;
+    font-weight: bolder;
+    margin: 0;
+
+}
+
+.p-result1{
+    font-size: 24px;
+    color: #1A2A33;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.h2-winner{
+    display: flex;
+    color: #A8BFC9;
+    gap: 12px;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 24px;
+    background-color: #1F3641;
+    width: 100%;
+    height: 266px;
+    text-align: center;
+  }
+
+  .modal-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+   
+  .h2-modal{
+
+    color: #31c3bd;
+  }
+
+  .quitButton{
+    width: 76px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: bolder;
+    word-spacing: 1px;
+    background-color: #A8BFC9;
+    color: #1A2A33;
+  }
+
+  .nextButtonModa{
+    width: 146px;
+    height: 52px;
+    font-size: 16px;
+    word-spacing: 1px;
+    font-weight: bolder;
+    padding: 0;
+    background-color: #F2B137;
+    color: #1A2A33;
+  }
+
+  .quitButton:hover{
+    background-color: #DBE8ED;
+  }
+
+  .nextButtonModa{
+    background-color: #FFC860;
+  }

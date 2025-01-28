@@ -4,10 +4,12 @@ import '../src/styles/App.css'
 import { VsCpu } from './pages/vsCpu';
 import { VsPlayer } from './pages/vsPlayer';
 
+
 function App() {
 
   return (
-    <Router>
+
+       <Router>
         <Routes>
       <Route path="/" element={<Hero />} />
       <Route path="/vscpu" element={<VsCpu />} />
@@ -15,6 +17,8 @@ function App() {
 
     </Routes>
       </Router>
+
+   
     
   )
 }
