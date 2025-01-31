@@ -113,21 +113,25 @@ body{
 }
 
 .p-result{
+    font-family: "Outfit", serif;
+    font-weight: 900;
     font-size: 14px;
     color: #1A2A33;
-    font-weight: bolder;
     margin: 0;
 
 }
 
 .p-result1{
+    font-family: "Outfit", serif;
+    font-weight: 900;
     font-size: 24px;
     color: #1A2A33;
-    font-weight: bolder;
     margin: 0;
 }
 
 .h2-winner{
+    font-family: "Outfit", serif;
+    font-weight: 900;
     display: flex;
     color: #A8BFC9;
     gap: 12px;
@@ -157,7 +161,6 @@ body{
     justify-content: center;
     justify-items: center;
     align-items: center;
-    gap: 24px;
     background-color: #1F3641;
     width: 100%;
     height: 266px;
@@ -173,26 +176,36 @@ body{
   }
    
   .h2-modal{
-
+    font-family: "Outfit", serif;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 40px;
+    letter-spacing: 2.5px;
     color: #31c3bd;
+    margin-top: 16px;
+    margin-bottom: 24px;
   }
 
   .quitButton{
+    font-family: "Outfit", serif;
+    font-weight: 900;
     width: 76px;
     height: 52px;
     font-size: 16px;
-    font-weight: bolder;
     word-spacing: 1px;
     background-color: #A8BFC9;
     color: #1A2A33;
   }
 
   .nextButtonModa{
+    font-family: "Outfit", serif;
+    font-weight: 900;
     width: 146px;
     height: 52px;
     font-size: 16px;
     word-spacing: 1px;
-    font-weight: bolder;
     padding: 0;
     background-color: #F2B137;
     color: #1A2A33;
@@ -204,4 +217,141 @@ body{
 
   .nextButtonModa{
     background-color: #FFC860;
+  }
+
+  .p-modal{
+    font-family: "Outfit", serif;
+    font-weight: 900;
+    color: #A8BFC9;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 500px) {
+
+    .container {
+      width: 375px;
+
+    }
+
+    .headerWrapper{
+        width: 328px;
+        height: 40px;
+    }
+
+    .tableWrapper{
+        width: 328px;
+        height: 328px;
+    }
+
+    .field{
+        width: 96px;
+        height: 96px;
+    }
+
+    .FiedImg{
+        width: 40px;
+        height: 40px;
+    }
+
+    .TurnIMG{
+        width: 16px;
+        height: 16px;
+    }
+
+    .hover-x:hover{
+        background-size: 40px 40px;
+    }
+
+    .hover-o:hover{
+        background-size: 40px 40px;
+    }
+
+    .resultWrapper{
+        width: 328px;
+        height: 64px;
+    }
+
+    .x-result{
+        width: 96px;
+        height: 64px;
+    }
+
+    .o-result{
+        width: 96px;
+        height: 64px;
+    }   
+
+    .ties-result{
+        width: 96px;
+        height: 64px;
+    }   
+
+    .p-result{
+        font-size: 16px;
+    }
+
+    .p-result1{
+        font-size: 20px;
+    }
+
+    .turnWrapper{
+        width: 96px;
+        height: 40px;
+        margin-left: 46px;
+        margin-right: 74px;
+
+    }
+
+    .h2-winner{
+        width: 96px;
+        font-size: 14px;   
+        gap: 9px;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .resetButton{
+        width: 40px;
+        height: 40px;
+    }
+
+    .resetSvg{
+        width: 16px;
+        height: 16px;
+    }
+
+    .logoSVG{
+        width: 71px;
+        height: 32px;
+    }
+
+    .modal {
+        height: 375px;
+    }
+
+    .h2-modal{
+        font-size: 24px;
+        gap: 8px;
+    }
+
+    .modalSvg{
+        width: 30px;
+        height: 30px;
+    }
+
+    .nextButtonModa{
+        width: 146px;
+        height: 52px;
+        font-size: 16px;
+    }
+
+    .quitButton{
+        width: 76px;
+        height: 52px;
+        font-size: 16px;
+    }
+    
   }

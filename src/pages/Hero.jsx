@@ -1,16 +1,24 @@
 import '../styles/Hero.css';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setPlayerPick } from '../store/userSlice';
+
 
 export function Hero(){
 
-    const [player, setPlayer] = useState('X');
-    console.log(player);
+    const [player, setPlayer] = useState('');
+
+    const dispatch = useDispatch();
     
-    const handlePlayer = () => {
-        if(player === 'X'){
+    const handlePlayer = (pick) => {
+        if(pick === 'O'){
             setPlayer('O');
+            dispatch(setPlayerPick('O'));
+            console.log("Dispatched: O"); // 🔍 Debug
         } else {
             setPlayer('X');
+            dispatch(setPlayerPick('X'));
+            console.log("Dispatched: X"); // 🔍 Debug
     } 
 }
 
@@ -32,12 +40,15 @@ export function Hero(){
                         PICK PLAYER 1’S MARKER
                     </h2>
                 <div className="choosePlayer">
-                    <button onClick={handlePlayer} className="xButton" style={{backgroundColor: player === 'X' ? '#A8BFC9' : '#1A2A33', color: player === 'X' ? '#1A2A33' : '#A8BFC9'}}>
-                        X
-                    </button>
-                    <button onClick={handlePlayer} className="oButton" style={{backgroundColor: player === 'O' ? '#A8BFC9' : '#1A2A33', color: player === 'O' ? '#1A2A33' : '#A8BFC9'}}>
-                        O
-                    </button>
+                <button onClick={() => handlePlayer('X')} className="xButton" 
+                    style={{ backgroundColor: player === 'X' ? '#A8BFC9' : '#1A2A33', color: player === 'X' ? '#1A2A33' : '#A8BFC9' }}>
+                    X
+                </button>
+                <button onClick={() => handlePlayer('O')} className="oButton" 
+                    style={{ backgroundColor: player === 'O' ? '#A8BFC9' : '#1A2A33', color: player === 'O' ? '#1A2A33' : '#A8BFC9' }}>
+                    O
+                </button>
+
                 </div>
                     <p className='p-main'>REMEMBER : X GOES FIRST</p>
              </div>
