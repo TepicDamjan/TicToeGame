@@ -188,6 +188,19 @@ body{
     margin-bottom: 24px;
   }
 
+  .h2-modal-restart{
+    font-family: "Outfit", serif;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 40px;
+    letter-spacing: 2.5px;
+    color: #A8BFC9;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
   .quitButton{
     font-family: "Outfit", serif;
     font-weight: 900;
@@ -203,6 +216,30 @@ body{
     font-family: "Outfit", serif;
     font-weight: 900;
     width: 146px;
+    height: 52px;
+    font-size: 16px;
+    word-spacing: 1px;
+    padding: 0;
+    background-color: #F2B137;
+    color: #1A2A33;
+  }
+
+  .cancelButton{
+    font-family: "Outfit", serif;
+    font-weight: 900;
+    width: 139px;
+    height: 52px;
+    font-size: 16px;
+    word-spacing: 1px;
+    padding: 0;
+    background-color: #A8BFC9;
+    color: #1A2A33;
+  }
+
+  .restartButtonModa{
+    font-family: "Outfit", serif;
+    font-weight: 900;
+    width: 151px;
     height: 52px;
     font-size: 16px;
     word-spacing: 1px;
@@ -328,13 +365,18 @@ body{
         height: 32px;
     }
 
-    .modal {
-        height: 375px;
+    .modal{
+        height: 228px;
+        width: 100%;
     }
 
     .h2-modal{
         font-size: 24px;
         gap: 8px;
+    }
+
+    .h2-modal-restart{
+        font-size: 24px;
     }
 
     .modalSvg{
@@ -347,6 +389,7 @@ body{
         height: 52px;
         font-size: 16px;
     }
+
 
     .quitButton{
         width: 76px;

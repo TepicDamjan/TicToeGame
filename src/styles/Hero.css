@@ -110,3 +110,47 @@ body{
 .playerButton:hover{
     background-color: #65E9E4;
 }
+
+@media screen and (max-width: 400px){
+    .container{
+        gap: 20px;
+    }
+    .pickPlayerWrapper{
+        width: 300px;
+        height: 150px;
+    }
+    .pickPlayerH2{
+        font-size: 14px;
+    }
+    .choosePlayer{
+        width: 260px;
+        height: 54px;
+    }
+    .xButton{
+        width: 120px;
+        height: 40px;
+        font-size: 24px;
+    }
+    .oButton{
+        width: 120px;
+        height: 40px;
+        font-size: 24px;
+    }
+    .p-main{
+        font-size: 14px;
+    }
+    .cpuButton{
+        width: 300px;
+        height: 54px;
+        font-size: 16px;
+    }
+    .buttonWrapper{
+        gap: 10px;
+    }
+    .playerButton{
+        width: 300px;
+        height: 54px;
+        font-size: 16px;
+    }
+    
+}

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   playerPick: "X",
+  vsCPU: false,
 };
 
 const userSlice = createSlice({
@@ -11,8 +12,11 @@ const userSlice = createSlice({
     setPlayerPick: (state, action) => {
       state.playerPick = action.payload;
     },
+    setVsCpu: (state, action) => {
+      state.vsCPU = action.payload;
+    },
   },
 });
 
-export const { setPlayerPick } = userSlice.actions;
+export const { setPlayerPick , setVsCpu } = userSlice.actions;
 export default userSlice.reducer;

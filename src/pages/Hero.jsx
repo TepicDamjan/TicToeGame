@@ -1,7 +1,7 @@
 import '../styles/Hero.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setPlayerPick } from '../store/userSlice';
+import { setPlayerPick, setVsCpu } from '../store/userSlice';
 
 
 export function Hero(){
@@ -55,7 +55,7 @@ export function Hero(){
 
             <div className="buttonWrapper">
                 <a href="/vscpu">
-                <button className="cpuButton">
+                <button className="cpuButton" onClick={() =>dispatch(setVsCpu(true))}>
                     
                     NEW GAME ( VS CPU )
 
@@ -63,7 +63,7 @@ export function Hero(){
                 </a>
                 
                 <a href="vsplayer">
-                <button className="playerButton">
+                <button className="playerButton" onClick={() =>dispatch(setVsCpu(false))}>
                     
                     NEW GAME ( VSPLAYER )
 
