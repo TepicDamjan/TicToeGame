@@ -6,21 +6,20 @@ import Xsquare from '../assets/Xsquare.svg';
 import Osquare from '../assets/Osquare.svg';
 import { useSelector } from 'react-redux';
 
-function Square({ value, onClick ,isNext }) {
+function Square({ value, onClick , playerPick }) {
   return (
-    <button onClick={onClick} className={`field ${value ? "" : isNext ? "hover-x" : "hover-o"}`}>
+    <button onClick={onClick} className={`field ${value ? "" : playerPick === 'X' ? "hover-x" : "hover-o"}`}>
       {value === "X" && <img className="FiedImg" src={Xsquare} alt="X" />}
       {value === "O" && <img className="FiedImg" src={Osquare} alt="O" />}
     </button>
   );
 }
 
-function Board({ squares, onSquareClick ,isNext }) {
+function Board({ squares, onSquareClick , playerPick }) {
   return (
     <div className="tableWrapper">
       {squares.map((square, index) => (
-        <Square key={index} value={square} onClick={() => onSquareClick(index)}
-        isNext={isNext}
+        <Square key={index} value={square} onClick={() => onSquareClick(index)} playerPick={playerPick}
         />
       ))}
     </div>
@@ -37,6 +36,7 @@ export function VsCpu() {
   const [pickWinner, setPickWinner] = useState("");
   const playerPick = useSelector((state) => state.user.playerPick);
   const vsCPU = useSelector((state) => state.user.vsCPU);
+  const [cpuFirst, setCpuFirst] = useState(false);
   const cpuPick = playerPick === "X" ? "O" : "X";
   console.log("Redux playerPick:",playerPick ); // 🔍 Debug
 
@@ -72,6 +72,7 @@ export function VsCpu() {
       );
       setPickWinner(winner === "X" ? "PLAYER 1 WINS !" : "PLAYER 2 WINS !");
       setShowModal(true);
+      startGame(playerPick === 'O' ? true : false);
       setScores((prevScores) => ({
         ...prevScores,
         [winner]: prevScores[winner] + 1,
@@ -89,17 +90,28 @@ export function VsCpu() {
       setSquares(Array(9).fill(null));
     }
   }, [winner]);
+
+  useEffect(() => {
+    if(cpuFirst){
+      setIsNext(false);
+      setTimeout(cpuMove, 1000);
+    }
+  },[cpuFirst]);
+
+  useEffect(() => {
+    if(!isNext){
+      setTimeout(cpuMove, 1000);
+    }
+  },[isNext,squares]);
   
 
-
-
   function handleClick(index) {
-    if (squares[index] || winner) return;
+    if (squares[index] || calculateWinner(squares) || !isNext ) return;
 
     const nextSquare = squares.slice();
-    nextSquare[index] = isNext ? "X" : "O";
+    nextSquare[index] = playerPick;
     setSquares(nextSquare);
-    setIsNext(!isNext);
+    setIsNext(false);
   }
 
   function resetGame() {
@@ -112,6 +124,29 @@ export function VsCpu() {
       setResetModal(true);
   }
 
+  function cpuMove(){
+    if(calculateWinner(squares) || squares.every(square => square !=null)) return;
+    
+    let emptySquares = squares.map((val, idx) => val === null ? idx : null).filter(val => val !== null);
+    let randomMove = emptySquares[Math.floor(Math.random() * emptySquares.length)];
+
+    if(randomMove !== undefined){
+      const nextSquare = squares.slice();
+      nextSquare[randomMove] = cpuPick;
+      setSquares(nextSquare);
+      setIsNext(true);
+    }
+  }
+
+  function startGame(cpuStarts){
+    setCpuFirst(cpuStarts);
+    setSquares(Array(9).fill(null));
+    setIsNext(!cpuStarts);
+  }
+
+  useEffect(() => {
+    startGame(playerPick === 'O' ? true : false);
+  },[]);
 
   return (
     <div className="container">
@@ -158,7 +193,7 @@ export function VsCpu() {
 
       {/* Game Board */}
       <div className="tableWrapper">
-        <Board squares={squares} onSquareClick={handleClick} isNext={isNext} />
+        <Board squares={squares} onSquareClick={handleClick} playerPick={playerPick} />
       </div>
 
       {/* Results */}
