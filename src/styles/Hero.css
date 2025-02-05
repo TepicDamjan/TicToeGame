@@ -114,6 +114,7 @@ body{
 @media screen and (max-width: 400px){
     .container{
         gap: 20px;
+        width: 100%;
     }
     .pickPlayerWrapper{
         width: 300px;
