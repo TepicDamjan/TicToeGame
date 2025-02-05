@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Hero } from './pages/Hero'
 import '../src/styles/App.css'
-import { VsCpu } from './pages/vsCpu';
-import { VsPlayer } from './pages/vsPlayer';
+import { VsCpu } from './pages/VsCpu';
+import { VsPlayer } from './pages/VsPlayer';
 
 
 function App() {
