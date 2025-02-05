@@ -35,7 +35,6 @@ export function VsCpu() {
   const [modalContent, setModalContent] = useState("");
   const [pickWinner, setPickWinner] = useState("");
   const playerPick = useSelector((state) => state.user.playerPick);
-  const vsCPU = useSelector((state) => state.user.vsCPU);
   const [cpuFirst, setCpuFirst] = useState(false);
   const cpuPick = playerPick === "X" ? "O" : "X";
   console.log("Redux playerPick:",playerPick ); // 🔍 Debug
