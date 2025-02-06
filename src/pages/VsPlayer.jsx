@@ -86,7 +86,7 @@ export function VsPlayer() {
       }));
       setSquares(Array(9).fill(null));
     }
-  }, [winner]);
+  }, [winner,squares]);
   
 
 

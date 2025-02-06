@@ -88,7 +88,7 @@ export function VsCpu() {
       }));
       setSquares(Array(9).fill(null));
     }
-  }, [winner]);
+  }, [winner,squares]);
 
   useEffect(() => {
     if(cpuFirst){
