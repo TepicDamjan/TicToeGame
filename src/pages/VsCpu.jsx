@@ -69,7 +69,7 @@ export function VsCpu() {
           TAKES THE ROUND
         </>
       );
-      setPickWinner(winner === "X" ? "PLAYER 1 WINS !" : "PLAYER 2 WINS !");
+      setPickWinner(winner === "X" ? playerPick === "X" ? "YOU WON !" : "OH NO , YOU LOST …" : playerPick === "O" ? "YOU WON !" : "OH NO , YOU LOST …");
       setShowModal(true);
       startGame(playerPick === 'O' ? true : false);
       setScores((prevScores) => ({
